@@ -3,33 +3,61 @@
 	Forty by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	asdjkasjdlkas
+
 -->
 <html>
 
 {% include head.html %}
-
+	<style>
+	.post_layout{
+		margin: 0 15% 0 15%;
+	}
+	.post_title_mid{
+		text-align:center;
+	}
+	</style>
 <body>
 
     {% include header.html %} 
     
-    
-<!-- Main -->
 <div id="main" class="alt">
 
-<!-- One -->
 <section id="one">
 	<div class="inner">
-		<header class="major">
-			<h1>{{ page.title }}</h1>
+		<header>
+			<h1 class="post_title_mid">{{ page.title }}</h1>
 		</header>
+		
 		{% if page.image %}<span class="image main"><img src="{{ site.baseurl }}/{{ page.image }}" alt="" /></span>{% endif %}
-		{{ content }}
+		<article class = "post_layout">
+			<hr></hr>
+			{{ content }}
+		</article>
 	</div>
 </section>
 
+<script type="text/javascript" async
+	src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<!-- mathjax -->
+<script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+	extensions: ["tex2jax.js"],
+	jax: ["input/TeX", "output/HTML-CSS"],
+	tex2jax: {
+		inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+		displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+		processEscapes: true
+	},
+	"HTML-CSS": { availableFonts: ["TeX"] }
+});
+</script>
+
 </div>
 
-    {% include footer.html %}
+<!--to enable fotter add "include footer.html" with one indent lv below this line in upper include titles format-->
 
 </body>
 

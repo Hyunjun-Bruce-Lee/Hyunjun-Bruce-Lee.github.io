@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Elements
+title: Resume
 image: assets/images/pic01.jpg
 nav-menu: true
 ---
@@ -73,17 +73,17 @@ Finally, this is a <a href="#">link</a>.</p>
 			<li>Sagittis lorem eleifend.</li>
 			<li>Felis dolore viverra.</li>
 		</ul>
-
+	
 		<h4>Alternate</h4>
 		<ul class="alt">
 			<li>Dolor etiam magna etiam.</li>
 			<li>Sagittis lorem eleifend.</li>
 			<li>Felis feugiat viverra.</li>
 		</ul>
-
+	
 	</div>
 	<div class="6u$ 12u$(small)">
-
+	
 		<h4>Ordered</h4>
 		<ol>
 			<li>Dolor etiam magna etiam.</li>
@@ -93,7 +93,7 @@ Finally, this is a <a href="#">link</a>.</p>
 			<li>Etiam vel lorem sed viverra.</li>
 			<li>Felis dolore viverra.</li>
 		</ol>
-
+	
 		<h4>Icons</h4>
 		<ul class="icons">
 			<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
@@ -108,7 +108,7 @@ Finally, this is a <a href="#">link</a>.</p>
 			<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
 			<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
 		</ul>
-
+	
 	</div>
 </div>
 
