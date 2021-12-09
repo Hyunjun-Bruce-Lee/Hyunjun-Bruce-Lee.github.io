@@ -41,10 +41,10 @@ nav-menu: true
 		</a>
 		<div class="content">
 			<div class="inner">
-				<a href="study/ml_study.html"><header class="major">
+				<a href="study/dl_study.html"><header class="major">
 					<h3>DL Study</h3>
                 </header></a>
-                <a href="study/ml_study.html"><p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem.</p></a>
+                <a href="study/dl_study.html"><p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem.</p></a>
 			</div>
 		</div>
 	</section>

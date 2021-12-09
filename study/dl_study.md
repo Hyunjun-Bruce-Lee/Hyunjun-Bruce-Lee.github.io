@@ -4,7 +4,6 @@ layout: study_main
 description: 'Lorem ipsum dolor sit amet nullam consequa<br />sed veroeros. tempus adipiscing nulla.'
 image: assets/images/pic07.jpg
 nav-menu: false
-show_main: ture
 show_tile: false
 ---
 
