@@ -1,7 +1,7 @@
 ---
-title: My Works
+title: Deep Learning
 layout: study_main
-description: 'Lorem ipsum dolor sit amet nullam consequa<br />sed veroeros. tempus adipiscing nulla.'
+description: 'Part of a broader family of machine learning methods <br />based on artificial neural networks with representation learning. '
 image: assets/images/pic07.jpg
 nav-menu: false
 show_tile: false

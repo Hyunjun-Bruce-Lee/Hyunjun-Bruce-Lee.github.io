@@ -1,7 +1,7 @@
 ---
-title: My Works
+title: Machine Learning
 layout: study_main
-description: 'Lorem ipsum dolor sit amet nullam consequa<br />sed veroeros. tempus adipiscing nulla.'
+description: 'Study of computer algorithms <br />that can improve automatically through experience and by the use of data.'
 image: assets/images/pic07.jpg
 nav-menu: false
 show_tile: false
@@ -22,18 +22,14 @@ show_tile: false
 	<section class="study_titles">
 		<div class="content">
 			<div class="inner">
-				<header class="major">
-					<h3>{{post.title}}</h3>
-				</header>
-				<p>{{ post.description }}</p>
-				<ul class="actions">
-					<li><a href="{{ site.baseurl }}{{ post.url }}" class="button">Learn more</a></li>
-				</ul>
+				<a href="{{ site.baseurl }}{{ post.url }}"><header class="major">
+					<h3>{{post.title}}</h3> <p>{{ post.description }}</p>
+                </header></a>
 			</div>
 		</div>
-        <!--asdasd-->
 	</section>
 </section>
+
 {% endif %}
 
 {% endfor %}

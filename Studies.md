@@ -1,7 +1,7 @@
 ---
-title: Studies
+title: Study
 layout: landing
-description: 'Lorem ipsum dolor sit amet nullam consequa<br />sed veroeros. tempus adipiscing nulla.'
+description: 'Machine Learning, Deep Learning <br />and Natural Language Processing'
 image: assets/images/pic07.jpg
 nav-menu: true
 ---
@@ -13,11 +13,12 @@ nav-menu: true
 <section id="one">
 	<div class="inner">
 		<header class="major">
-			<h2>Sed amet aliquam</h2>
+			<h2>What's here?</h2>
 		</header>
-		<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna.</p>
+		<p>Explanation and Understandings about various algorithms in each category.<br /> How to use such algorithms in python and How it works.</p>
 	</div>
 </section>
+
 
 <!-- Two -->
 
@@ -29,9 +30,9 @@ nav-menu: true
 		<div class="content">
 			<div class="inner">
 				<a href="study/ml_study.html"><header class="major">
-					<h3>ML Study</h3>
+					<h3>Machine Learning</h3>
 				</header></a>
-				<a href="study/ml_study.html"><p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. </p></a>
+				<a href="study/ml_study.html"><p>Study of computer algorithms <br />that can improve automatically through experience and by the use of data. </p></a>
 			</div>
 		</div>
 	</section>
@@ -42,9 +43,9 @@ nav-menu: true
 		<div class="content">
 			<div class="inner">
 				<a href="study/dl_study.html"><header class="major">
-					<h3>DL Study</h3>
+					<h3>Deep Learning</h3>
                 </header></a>
-                <a href="study/dl_study.html"><p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem.</p></a>
+                <a href="study/dl_study.html"><p>Part of a broader family of machine learning methods <br />based on artificial neural networks with representation learning. </p></a>
 			</div>
 		</div>
 	</section>
@@ -55,12 +56,13 @@ nav-menu: true
 		<div class="content">
 			<div class="inner">
 				<a href="study/nlp_study.html"><header class="major">
-					<h3>NLP Study</h3>
+					<h3>Natural Language Processing</h3>
                 </header></a>
-                <a href="study/nlp_study.html"><p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem.</p></a>
+                <a href="study/nlp_study.html"><p>Artificial intelligence concerned <br />with the interactions between computers and human language.</p></a>
 			</div>
 		</div>
 	</section>
 </section>
+
 
 </div>

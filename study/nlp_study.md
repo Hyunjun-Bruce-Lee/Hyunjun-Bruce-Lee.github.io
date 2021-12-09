@@ -1,7 +1,7 @@
 ---
-title: My Works
+title: Natural Language Processing
 layout: study_main
-description: 'Lorem ipsum dolor sit amet nullam consequa<br />sed veroeros. tempus adipiscing nulla.'
+description: 'Artificial intelligence concerned <br />with the interactions between computers and human language.'
 image: assets/images/pic07.jpg
 nav-menu: false
 show_tile: false
