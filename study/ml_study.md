@@ -7,30 +7,33 @@ nav-menu: false
 show_tile: false
 ---
 
-<!-- Main -->
-
-<div id="main">
-<!-- One -->
-<!-- Two -->
 
 
+<div>
+    &nbsp;<br>&nbsp;
+</div>
+
+
+<div class="row">
 {% for post in site.posts %}
-
 {% if post.ml %}
-
-<section id="two" class="spotlights">
-	<section class="study_titles">
-		<div class="content">
-			<div class="inner">
-				<a href="{{ site.baseurl }}{{ post.url }}"><header class="major">
-					<h3>{{post.title}}</h3> <p>{{ post.description }}</p>
-                </header></a>
-			</div>
-		</div>
-	</section>
-</section>
+	<div class="4u 12u$(small)">
+    <hr class='line_margin'>
+        <a href="{{ site.baseurl }}{{ post.url }}"><h2 class='post_order'>{{ post.title }}</h2></a>
+        <a href="{{ site.baseurl }}{{ post.url }}"><h5 class='post_order'>{{ post.description }}</h5></a>
+	<hr class='line_margin'>
+    </div>
 
 {% endif %}
-
 {% endfor %}
+</div>
 
+
+
+
+
+
+
+<div>
+    &nbsp;<br>&nbsp;<br>&nbsp;
+</div>

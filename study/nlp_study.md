@@ -7,33 +7,27 @@ nav-menu: false
 show_tile: false
 ---
 
-<!-- Main -->
-
-<div id="main">
-<!-- One -->
-<!-- Two -->
 
 
+<div>
+    &nbsp;<br>&nbsp;
+</div>
+
+
+
+<div class="row">
 {% for post in site.posts %}
-
 {% if post.nlp %}
+	<div class="4u 12u$(small)">
+    <hr class='line_margin'>
+        <a href="{{ site.baseurl }}{{ post.url }}"><h2 class='post_order'>{{ post.title }}</h2></a>
+        <a href="{{ site.baseurl }}{{ post.url }}"><h5 class='post_order'>{{ post.description }}</h5></a>
+	<hr class='line_margin'>
+    </div>
 
-<section id="two" class="spotlights">
-	<section class="study_titles">
-		<div class="content">
-			<div class="inner">
-				<header class="major">
-					<h3>{{post.title}}</h3>
-				</header>
-				<p>{{ post.description }}</p>
-				<ul class="actions">
-					<li><a href="{{ site.baseurl }}{{ post.url }}" class="button">Learn more</a></li>
-				</ul>
-			</div>
-		</div>
-        <!--asdasd-->
-	</section>
-</section>
 {% endif %}
-
 {% endfor %}
+</div>
+
+
+
