@@ -140,5 +140,5 @@ $$
 
 ### Practice (Python)
 
-[Boston Data](https://github.com/Hyunjun-Bruce-Lee/ML_study/blob/master/Esemble/AdaBoost.py)
+[Boston Data](https://github.com/Hyunjun-Bruce-Lee/ML_study/blob/master/XGBoost/XGBoost(regression).py)
 
