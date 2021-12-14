@@ -58,6 +58,8 @@ Gradient Boosting은  leaf node의 평균값을 이용하여 residual(잔차)를
 
 **Gradient Boosting (Regression) 학습과정(수식)**
 
+&nbsp;
+
 **step 1**
 $$
 \begin{align*}
@@ -71,6 +73,8 @@ $$
 F_0(x)\;=\;argmin\sum_i^nL(y_i,\gamma)\\
 \gamma\;:추정치(\hat{y})\;\;\;\;F_0(x)\;:\;초기추정치
 $$
+
+&nbsp;
 
 **step 1 with data**
 $$
@@ -86,16 +90,22 @@ y=&\{88,76,56,73,77,57\}\;\;\;\;\;\;\;L(y,\hat{y})(loss\;function)=\frac{1}{2}(y
 &F_0(x)\;=\;71.2
 \end{align*}
 $$
+&nbsp;
+
 **step 2** (A~D)
 $$
 for\;m=1\;to\;M\;(residual을\;줄이기위해\;아래의\;A\;to\;D를\;\;M회\;반복연산)\\
 $$
+&nbsp;
+
 **2-A** : Compute so-called pseudo-residuals (데이터들에 대한 잔차를 계산한다.)
 $$
 \begin{align*}
 r_{im}\;=\;-\bigg[\frac{\partial L(y_i,F(x_i))}{\partial F(x_i)}\bigg]\;\;\;\;\;\;\;\;\;_{F(x)\;=\;F_{m-1}(x)}^{for\;i\;=\;1,\cdots,n}
 \end{align*}\;\;\;\;\;\;\;\;(r_{im\;:\;i번째\;데이터의\;m회차\;잔차})
 $$
+&nbsp;
+
 ​	**2-A** with data
 $$
 \begin{align*}
@@ -112,15 +122,20 @@ $$
 \end{align*}
 $$
 
+&nbsp;
 
 **2-B** : Fit a regression tree to the $r_{im}$ values and create terminal regions  $R_{jm},\;for\;j=1 \cdots J_m$ (계산된 잔차들을 기준으로 회귀나무를 전개하여 최종영역을 도출한다.)
 
 <center><img src="{{ "/assets/images/G_Boosting_6.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
 
+&nbsp;
+
 **2-C** : for $j = 1 \cdots J_m$ compute (분기된 나무의 최종 영역에 대하여 연산을 진행한다. data A가 R1,1의 영역에 속하게된다면, $\gamma_{jm}$값으로 취급한다.)
 $$
 \gamma_{jm}\;=\;\underset{\gamma}{argmin}\sum_{x_i\in R_{ij}}L(y_i,F_{m-1}(x_i)+\gamma)
 $$
+&nbsp;
+
 ​	**2-C** with data
 $$
 \begin{align*}
@@ -131,6 +146,8 @@ $$
 &14.2\;+\;\gamma\;+15.2\;+\;\gamma\;=\;0\;\to\;\gamma\;=-14.7\;=\gamma_{1,1}
 \end{align*}
 $$
+&nbsp;
+
 **2-D** : Update the model
 $$
 F_m(x)\;=\;F_{m-1}(x)\;+\;\alpha\sum_{j=1}^{J_m}\gamma_{jm}I(x\in R_{jm})\;\;\;\;\;\;\;\;\alpha = training\;rate
@@ -140,5 +157,5 @@ $$
 
 ### Practice (Python)
 
-[Boston Data](https://github.com/Hyunjun-Bruce-Lee/ML_study/blob/master/XGBoost/XGBoost(regression).py)
+[Boston Data](https://github.com/Hyunjun-Bruce-Lee/ML_study/blob/master/GradientBoost/GradientBoost(regression).py)
 
