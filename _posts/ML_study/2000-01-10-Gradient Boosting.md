@@ -24,7 +24,7 @@ Gradient Boosting은  leaf node의 평균값을 이용하여 residual(잔차)를
 
 ### Gradient Boosting (Regression) 상세 학습 과정 
 
-<center><img src="{{ "/assets/images/G_Boosting_0.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
+<center><img src="{{ "/assets/images/Gradient_Boosting/G_Boosting_0.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
 
 
 
@@ -32,19 +32,19 @@ Gradient Boosting은  leaf node의 평균값을 이용하여 residual(잔차)를
 
 1 - $residual(0)$을 계산한 후, 계산한 $residual(0)$에 대하여 Decision Tree(1)을 생성한다.
 
-<center><img src="{{ "/assets/images/G_Boosting_1.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
+<center><img src="{{ "/assets/images/Gradient_Boosting/G_Boosting_1.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
 
 2 - 생성한 Decision Tree(1)를 이용하여 새로운 residual(1)을 계산한다. 
 
-<center><img src="{{ "/assets/images/G_Boosting_2.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
+<center><img src="{{ "/assets/images/Gradient_Boosting/G_Boosting_2.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
 
 3 - 계산된 $residual(1)$을 이용하여 Decision Tree(2)를 생성한다.
 
-<center><img src="{{ "/assets/images/G_Boosting_3.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
+<center><img src="{{ "/assets/images/Gradient_Boosting/G_Boosting_3.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
 
 4 - $residual(1)$과 Tree(2)를 이용하여 새로운 $residual(2)$를 계산한다.
 
-<center><img src="{{ "/assets/images/G_Boosting_4.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
+<center><img src="{{ "/assets/images/Gradient_Boosting/G_Boosting_4.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
 
 &nbsp;
 
@@ -52,7 +52,7 @@ Gradient Boosting은  leaf node의 평균값을 이용하여 residual(잔차)를
 
 다음과 같은 신규 데이터가 존재할경우, 다음과 같이 residual을 줄이는 과정에서 생성된 Tree들에 신규데이터를 대입하여 신규데이터에 대한 각트리의 잔차 추정치를 얻은 후, 최종 추정치를 계산하게 된다.
 
-<center><img src="{{ "/assets/images/G_Boosting_5.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
+<center><img src="{{ "/assets/images/Gradient_Boosting/G_Boosting_5.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
 
 - 단 실제 모델링의 경우 예시처럼 잔차의 계산이 3회로 끝나는 것이 아니다(잔차가 충분히 작아질 떄까지 훈련을 진행해야 한다). 
 
@@ -134,7 +134,7 @@ Gradient Boosting은  leaf node의 평균값을 이용하여 residual(잔차)를
 
 **2-B** : Fit a regression tree to the $r_{im}$ values and create terminal regions  $R_{jm},\;for\;j=1 \cdots J_m$ (계산된 잔차들을 기준으로 회귀나무를 전개하여 최종영역을 도출한다.)
 
-<center><img src="{{ "/assets/images/G_Boosting_6.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
+<center><img src="{{ "/assets/images/Gradient_Boosting/G_Boosting_6.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
 
 **2-C** : for $j = 1 \cdots J_m$ compute (분기된 나무의 최종 영역에 대하여 연산을 진행한다. data A가 R1,1의 영역에 속하게된다면, $\gamma_{jm}$값으로 취급한다.)
 
@@ -194,7 +194,7 @@ Classification(분류)문제에서의 Gradient Boosting은 Regression(회귀)문
 
 **아래에서 Loves movie가 target값이며 0.8의 학습율(learning rate)을 가질 경우 다음과 같은 방법을 $residual(N)$이 충분히 작아질때까지 N회 반복하여 학습을 진행한다.**
 
-<center><img src="{{ "/assets/images/G_Boosting_7.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
+<center><img src="{{ "/assets/images/Gradient_Boosting/G_Boosting_7.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
 
 1. target의 log(odds)를 계산한다.
 
@@ -222,7 +222,7 @@ Classification(분류)문제에서의 Gradient Boosting은 Regression(회귀)문
 > Leaf\;value\;=\;\frac{\sum_i Residual_i}{\sum_i[P_i\times(1-P_i)]}\;\;\;\;\;\;\;\;P_i\;:\;이전\;추정치의\;확률
 > $$
 
-<center><img src="{{ "/assets/images/G_Boosting_8.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
+<center><img src="{{ "/assets/images/Gradient_Boosting/G_Boosting_8.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
 
 
 
@@ -240,7 +240,7 @@ Classification(분류)문제에서의 Gradient Boosting은 Regression(회귀)문
 
 6. residual(1)에 대하여 Decision Tree(2)를 생성한 후 (1)에서 처럼Leaf-value를 계산한다.
 
-<center><img src="{{ "/assets/images/G_Boosting_9.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
+<center><img src="{{ "/assets/images/Gradient_Boosting/G_Boosting_9.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
 
 
 

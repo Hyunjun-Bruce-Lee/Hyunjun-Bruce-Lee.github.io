@@ -26,9 +26,7 @@ ml: True
 
 H-Clustering은 데이터들간의 거리를 기준으로 순차적으로 데이터를 병합하며 군집화를 진행한다. 데이터가 최종적으로 하나의 군집에 속할 때까지 군집간 병합을 진행하여 Dendrogram을 전개한 후, 전개된 Dendrogram을 보고 최종 군집이 이루어질 단계를 정하게된다.
 
-<center><img src="{{ "/assets/images/H-Clustering_1.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
-
-<center><img src="{{ "/assets/images/H-Clustering_2.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
+<center><img src="{{ "/assets/images/H_clustering/H-Clustering.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
 
 &nbsp;
 

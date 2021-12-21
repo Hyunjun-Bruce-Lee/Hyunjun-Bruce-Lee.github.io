@@ -42,7 +42,7 @@ ml: True
 
 일반적으로 불순척도로는 엔트로피와 지니지수가 이용된다.
 
-<center><img src="{{ "/images/entropy_and_jini.png" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
+<center><img src="{{ "/images/DecisionTree/entropy_and_jini.png" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
 
 
 
@@ -284,7 +284,11 @@ $$
 
 특정 Feature가 불순도를 감소시키는데 평균적으로 크게 기여하였다면, 해당 Feature를 중요한 것으로 판단한다.
 
+&nbsp;
 
+&nbsp;
+
+&nbsp;
 
 ### Practice (python)
 

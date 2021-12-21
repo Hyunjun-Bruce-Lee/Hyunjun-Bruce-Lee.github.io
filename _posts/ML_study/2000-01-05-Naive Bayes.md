@@ -46,9 +46,9 @@ $$
 
 다음과 같은 데이터가 있을때 Naive Bayes가 어떠한 과정을 통해 분류를 진행하는지 알아보자
 
-<center><img src="{{ "/assets/images/NaiveBayes_ex.png" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
+<center><img src="{{ "/assets/images/NaiveBayes/NaiveBayes_ex.png" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
 
-<center><img src="{{ "assets/images/NaiveBayes_ex_y.png" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
+<center><img src="{{ "assets/images/NaiveBayes/NaiveBayes_ex_y.png" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
 
 - 위에서 언급하였듯이 시험 데이터의 feature들을 이용하여 아래 두확률을 계산한 후 보다 더 큰 확률의 Y를 선택하게된다.
 
@@ -168,7 +168,11 @@ $$
 
 **MultinomialNB** : 빈도 데이터 (카운트 기반)
 
+&nbsp;
 
+&nbsp;
+
+&nbsp;
 
 ### Practice (python)
 

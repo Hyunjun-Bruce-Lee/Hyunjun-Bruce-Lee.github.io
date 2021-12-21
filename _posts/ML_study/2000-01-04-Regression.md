@@ -87,6 +87,12 @@ SST: total sum of square (편차 제곱 합$\;\to\;\sum_{i=1}^n(y_i- \bar{y})^2$
 
 위의 방식으로 구해진 $R^2\;score$는 0~1사이의 값을 갖으며, 1에 가까울수록 도출된 회귀선이 데이터를 잘 설명하는 것이다. ($R^2\;score$가 1이라면 모든 데이터가 회귀선 위에 위치함) 
 
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
 
 
 ### Practice (python)
@@ -98,6 +104,12 @@ SST: total sum of square (편차 제곱 합$\;\to\;\sum_{i=1}^n(y_i- \bar{y})^2$
 [OLS_TensorFlow](https://github.com/Hyunjun-Bruce-Lee/ML_study/blob/master/Regression/Regression(OLS).py)
 
 [TLS_TensorFlow](https://github.com/Hyunjun-Bruce-Lee/ML_study/blob/master/Regression/Regression(TLS).py)
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 
 
@@ -286,7 +298,11 @@ Cross Entropy는 Claude Shannon이 제안한 정보량을 계량화하는 방법
 >
 > $min_{(w,c)}\frac{1}{2}w^tw+C\sum_{i=1}^nlog(exp(-y^\prime_ix^t_i\cdot w+bias)+1)$
 
+&nbsp;
 
+&nbsp;
+
+&nbsp;
 
 ### Practice (python)
 
