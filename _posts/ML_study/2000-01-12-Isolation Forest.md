@@ -3,6 +3,7 @@ layout: post
 title: Isolation Forest
 description: Isolation Tree (iForest)
 image: 
+use_math: true
 ml: True
 ---
 
