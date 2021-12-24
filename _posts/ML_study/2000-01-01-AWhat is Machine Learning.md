@@ -9,7 +9,7 @@ ml: True
 
 ### What is Machine Learning?
 
-머신러닝은 Artificial Intelligence(AI)와 Computer Science의 갈래중 하나에 속하는 학문으로, DATA자체의 활용성과 알고리즘에 집중하여 인간의 학습방법을 모방하여 주어진 과제를 정확하게 해결하는것에 의의를 두고 있다.
+머신러닝은 Artificial Intelligence(AI)와 Computer Science의 갈래중 하나에 속하는 학문으로, DATA자체의 활용성과 알고리즘에 집중하여 인간의 학습방법을 모방하여 명시적인 프로그래밍과정 없이 주어진 과제를 정확하게 해결하는것에 의의를 두고 있다.
 
 <center><img src="{{ "/assets/images/ML_intro/intro_1.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
 

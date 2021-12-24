@@ -63,7 +63,18 @@ nav-menu: true
 		</div>
 	</section>
 </section>
+</div>
 
 
+
+<p>&nbsp;</p>
+
+<div>
+
+<a href="https://github.com/Hyunjun-Bruce-Lee/algorithm_study/tree/main">
+
+<center><b><p> To see computer algorithm study log click here </p></b></center>
+
+</a>
 
 </div>
