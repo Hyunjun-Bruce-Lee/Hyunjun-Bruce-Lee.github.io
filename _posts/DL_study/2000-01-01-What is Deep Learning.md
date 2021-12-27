@@ -1,0 +1,81 @@
+---
+layout: post
+title: Deep Learning intro
+description: What is Deep Learning?
+image:
+dl: True
+---
+
+### What is Deep Learning?
+
+딥러닝은 머신러닝에 포함되는 개념으로 인간의 신경망이 모방되어 적용된 머신러닝을 의미한다.
+
+딥러닝은 1900년대에 최초로 소개된 단층 퍼셉트론에서 출발한다. 단층 퍼셉트론은 XOR연산의 한계를 극복하기 위하여 다층퍼셉트론으로 발전하게되었으며, 다층퍼셉트론에 Weight(가중치)와 Bias(편향)설정의 한계를 해결하는 Back Propagation(오차 역전파)기법이 더해고, Activation Function(활성함수)의 개념이 더해지면서 현재의 딥러닝의 구조를 확립하였다.
+
+1990년대에 들어서며 실생활 문제의 데이터의 구조가 복잡해지면서 기울기소실, 실제 최적값이 아닌 일시적 최적값에서 학습을 중단하는 등의 알고리즘적인 문제와 컴퓨터 자원의 한계로인하여 학습시간이 너무나도 길게 소요된다는 점등의 이유로 점차 사장되어가기 시작했다.
+
+그러나 2000년대에 점어들며 다양한 비선형함수를 이용한 기울기 소실문제의 해결법이 연구되고, 컴퓨터 하드웨어 기술의 발전 등의 긍정적 요인으로 인해  현재의 딥러닝이 갖는 위상을 갖게 되었다.
+
+
+
+### Deep Learning HOW?
+
+앞서 언급되었듯이 딥러닝은 인간의 신경망을 모방한 머신러닝으로 인간의 신경망과 유사한 구조를 갖는다. 인간의 신경세포는 수상돌기로 받아들이 외부의 전달물질을 세포체에 저장하고, 자신의 용량을 넘어서면 축색돌기를 통해 외부로 전달물질을 내보낸다고 알려져 있으며 구조는 다음과 같다.
+
+<center><img src="{{ "/assets/images/DL_INTRO/DL_INTRO_1.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
+
+딥러닝에서는 이러한 신경세포의 구조를 모방하여 모델을 설계하며, 신경세포의 집합이 모델을 이룬다는 점에서 이러한 모델을 인공신경망 모델 이라고 부른다.  (인공신경망이 깊어지는 경우 이를 심층 신경망(Deep Neural Network)이라고 부른다.)
+
+<center><img src="{{ "/assets/images/DL_INTRO/DL_INTRO_2.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
+
+- 단층 퍼셉트론
+  - 단일신경 1개(Activation Function 제외)로만 이루어짐
+- 다층 퍼셉트론 
+  - 복수개의 단일신경(Activation Function 제외)이 연결되어 구성됨
+- 인공신경망
+  - Activation Function을 포함한 단일신경이 연결되어 구성됨
+
+
+
+위 그림의 구조를 이용하는 딥러닝은 학습을 진행하며 weight(가중치)를 개선해 나가간다. 가중치는 데이터가 각뉴런간 간선을 통과할때 곱해지는 변인으로 다음과같은 형태로 계산된다.
+
+<center><img src="{{ "/assets/images/DL_INTRO/DL_INTRO_3.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
+
+> $$
+> \begin{align*}
+> Point\;A\;:\;X_1\times w_1&\;+\;X_2\times w_2\;+\;X_3\times w_3\;+\;b\\
+> \;\\
+> &\sum_{i=1}^nX_iw_i\;+\;b
+> \end{align*}
+> $$
+
+
+
+이후 다양한 활성함수 중 한가지를 통화하여 다음 뉴런에게 계산된 정보를 전달해주거나 최종 출력값으로 계산된 정보를 반환 한다. (아래의 예시 활성함수 = Sigmoid)
+
+> $$
+> Point\;B:\;\frac{1}{1+e^{(Point\;A)}}
+> $$
+
+&nbsp;
+
+가중치의 개선은 데이터를 모델에 정방향으로 통과시키는 Foeward Propagation(순전파)와 Back propagation(역전파)를 통하여 이루어진다.  ([What is Back Propagation?]())
+
+순전파의 경우 주어진 입력값을 토대로 위의 계산을 모델이 끝날때까지 전개해나가는 것을 의미하며, 역전파의 경우 순전파를 통해 최종적으로 도출된값에 지정된 오차 함수(Loss Function)를 통해 오차를계산하여 해당 오차를 역방향으로 전달하며 오차를 줄이도록 가중치를 갱신하는것을 의미한다. 실제 가중치의 개선은 역전파 과정에서 이루어진다.
+
+순전파와 역전파를 충분히 반복하게되면, 모델은 주어진 문제에 대한 답을 도출하는데 최적의 상태가 되고, 이때 훈련을 종료한다. (단, 과적합의 가능성이 있기에 이를 주의해야한다.  무조건 정확도가 높다고 좋은것은 아니다. $\to$ Cross Validation을 통하여 개선가능)
+
+&nbsp;
+
+역전파의 과정은 Optimizer(최적화 알고리즘)를 기반으로 이루어지며, Optimizer에 따라 가중치의 변화가 달라진다. ([What is Optimizer?]())
+
+&nbsp;
+
+
+
+
+
+
+
+
+
