@@ -54,28 +54,50 @@ dl: True
 이후 다양한 활성함수 중 한가지를 통화하여 다음 뉴런에게 계산된 정보를 전달해주거나 최종 출력값으로 계산된 정보를 반환 한다. (아래의 예시 활성함수 = Sigmoid)
 
 > $$
-> Point\;B:\;\frac{1}{1+e^{(Point\;A)}}
+> Point\;B:\;\frac{1}{1+e^{(-Point\;A)}}
 > $$
 
 &nbsp;
 
-가중치의 개선은 데이터를 모델에 정방향으로 통과시키는 Foeward Propagation(순전파)와 Back propagation(역전파)를 통하여 이루어진다.  ([What is Back Propagation?]())
+가중치의 개선은 데이터를 모델에 정방향으로 통과시키는 Foeward Propagation(순전파)와 Back propagation(역전파)를 통하여 이루어진다. 
 
-순전파의 경우 주어진 입력값을 토대로 위의 계산을 모델이 끝날때까지 전개해나가는 것을 의미하며, 역전파의 경우 순전파를 통해 최종적으로 도출된값에 지정된 오차 함수(Loss Function)를 통해 오차를계산하여 해당 오차를 역방향으로 전달하며 오차를 줄이도록 가중치를 갱신하는것을 의미한다. 실제 가중치의 개선은 역전파 과정에서 이루어진다.
+순전파의 경우 주어진 입력값을 토대로 위의 계산을 모델이 끝날때까지 전개해나가는 것을 의미하며, 역전파의 경우 순전파를 통해 최종적으로 도출된값에 지정된 오차 함수(Loss Function)를 통해 오차를계산하여 해당 오차를 역방향으로 전달하며  줄이도록 가중치를 갱신하는것을 의미한다. 실제 가중치의 개선은 역전파 과정에서 이루어진다.
 
 순전파와 역전파를 충분히 반복하게되면, 모델은 주어진 문제에 대한 답을 도출하는데 최적의 상태가 되고, 이때 훈련을 종료한다. (단, 과적합의 가능성이 있기에 이를 주의해야한다.  무조건 정확도가 높다고 좋은것은 아니다. $\to$ Cross Validation을 통하여 개선가능)
 
 &nbsp;
 
-역전파의 과정은 Optimizer(최적화 알고리즘)를 기반으로 이루어지며, Optimizer에 따라 가중치의 변화가 달라진다. ([What is Optimizer?]())
+### Back Propagation(역전파)
 
-&nbsp;
+<center><img src="{{ "/assets/images/DL_INTRO/DL_INTRO_4.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
 
+역전파는 엄밀히 말하면 Error Back Propagation이다. 순전파를 통해 도출된 최종 예측값과 실제 값간의 차이(Error)를 지나온 과정에 전달하며 가중치에 이를 반영하는 것을 통해 Error를 최소화하는 과정이다.  이 과정은 Optimizer(최적화 알고리즘)를 기반으로 이루어지며, Optimizer에 따라 전달된 에러가 특정 단계에 미치는 영향(가중치의 변화)이 달라진다. ([What is Optimizer?]()) 이때 전달된 에러를 기준으로 기존의 가중치를 얼마나 변화시킬지는 학습률(Learning Rate)에 의하여 결정된다. 
 
+ &nbsp;
 
+#### 수식으로 보는 Back Propagation
 
+하나의 신경망 모델의 다음과 같은 수식처럼 여러 함수들이 합쳐진 합성함수로 볼 수 있다.(함수가 적용된 출력이 다음 함수의 인자로 전달됨)
 
+<center><img src="{{ "/assets/images/DL_INTRO/DL_INTRO_5.PNG" | absolute_url }}" width = 'auto' height = 'auto' alt="" /></center>
 
+> $$
+> \hat{y}\;=\;sigmoid(W_3\cdot sigmoid(W_2\cdot sigmoid(W_1\cdot x+b_1)+b_2)+b_3)
+> $$
 
+이는 해당 신경망에 연쇄 법칙(Chain Rule)을 적용할 수 있다는 의미이다. 
 
+- Chain Rule : 합성함수의 미분은 해당 함수를 구성하는 개별 함수(미분 가능 해야함) 미분의 곱으로 나타낼 수 있음
+
+- > $$
+  > t\;=\;3x\;\;\;\;\;\;\;z\;=\;t^2\\
+  > \;\\
+  > \frac{\partial z}{\partial x}\;=\;\frac{\partial z}{\partial t}\cdot\frac{\partial t}{\partial x}
+  > $$
+
+- 이는 $x$가 변화했을때 $t$가 얼마나 변화하는지, $t$가 변화된 것이 $z$를 얼마나 변화시키는지를 알 수 있다는 의미이다.(미분 = 기울기 도출 = 변화량 도출)
+
+- 즉 위식에서 좌변의 값(x에대한  z의 변화량)은 t에대한 z의 변화량과 x에대한 t의 변화량으로 표현된다는 것이다. 
+
+Chain Rule의 이러한 특성을 이용하여 최종출력값에 각 노드들이 얼마만큼의 영향을 미쳤는지를 구할 수 있다.
 
