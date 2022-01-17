@@ -141,20 +141,54 @@ Chain Rule의 이러한 특성을 이용하여 최종출력값에 각 노드들�
 &nbsp;
 
 - Chain Rule을 이용하여 에러를 역전파 한다.
-  - $w_5$에 대한 역전파($w_5$가 오차에 얼마나 기여하였는지 계산)
+  - $w_9$에 대한 역전파($w_9$가 오차에 얼마나 기여하였는지 계산)
 
 > $$
-> \frac{\partial Error}{\partial w_5}\;&=\;\frac{\partial Error}{\partial st3_{out}} \times \frac{\partial st3_{out}}{\partial st3_{in}} \times \frac{\partial st3_{in}}{\partial w_5}\\
+> \frac{\partial Error}{\partial w_9}\;&=\;\frac{\partial Error}{\partial st3_{out}} \times \frac{\partial st3_{out}}{\partial st3_{in}} \times \frac{\partial st3_{in}}{\partial w_9}\\
 > $$
 
 > $$
 > \begin{align*}
-> \frac{\partial Error}{\partial st3_{out}}\;&=\;1\times \frac{1}{1}(y\;-\;\hat{y})^{2-1}\\
+> \frac{\partial Error}{\partial st3_{out}}\;&=\;-2\times \frac{1}{1}(y\;-\;\hat{y})^{2-1}\\
 > \;\\
-> &=\;0.9\;-\;0.612248\;=\;0.287752\\
+> &=\;-2\times(0.9\;-\;0.612248)\;=\;-0.575504\\
 > \;\\
-> \frac{\partial st3_{out}}{\partial st3_{in}}\;&=\;
+> \frac{\partial st3_{out}}{\partial st3_{in}}\;&=\; st3_{out}\times(1-st3_{out})\\
+> &=\;0.612248\times(1-0.612248)\;=\;0.237400\\
+> \;\\
+> \frac{\partial st3_{in}}{\partial w_9}\;&=\;st_{21}\;=\;0.729929
 > \end{align*}
+> $$
+
+- 계산된 $w_9$의 기여도와 학습률을 이용하여 새로운 $w_9$을 구한다. (learning rate = $\alpha$ = 0.3)
+
+> $$
+> w_9^{new}\;=\;w_9-\alpha \frac{\partial Error}{\partial w_9}\;=\;0.2-0.3\times(-0.575504\times 0.237400\times 0.729929)\;=\;0.237479
+> $$
+
+- 순전파를 진행한 후, 위의 과정을 모든 가중치에 대하여 수행한 것을 1 iteration을 수행하였다고 한다.
+
+&nbsp;
+
+- 갱신된 $w_9$을 반영하여 출력값을 다기 계산해보면, 오차가 이전보다 감소함을 확인 할 수 있다.
+  - 실제로는 $w_9$만 갱신하는것이 아닌 모든 $w$에대하여 갱신을 진행해야한다.
+
+> $$
+> \begin{align*}
+> st_{11}\;&=\;x_1\times w_1 +x_2\times w_3\;=\;0.997762\\
+> st_{12}\;&=\;x_1\times w_2 +x_2\times w_4\;=\;0.989013\\
+> \;\\
+> st_{21}\;&=\;st_{11}\times w_5 +st_{12}\times w_7\;=\;0.729929\\
+> st_{22}\;&=\;st_{11}\times w_6 +st_{12}\times w_8\;=\;0.621579\\
+> \;\\
+> \hat{y}\;=\;st_{3}\;&=\;st_{21}\times w_9^{new}+st_{22}\times w_{10}\;=\;0.618723\\
+> \end{align*}
+> $$
+
+> $$
+> previous\;error = (0.9 - 0.612248)^2\;=\;0.0828006\\
+> \;\\
+> current\;error = (0.9 - 0.618723)^2\;=\;0.079116
 > $$
 
 
