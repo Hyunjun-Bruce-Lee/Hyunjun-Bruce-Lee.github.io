@@ -126,7 +126,7 @@ Chain Rule의 이러한 특성을 이용하여 최종출력값에 각 노드들�
 > \end{align*}
 > $$
 
-
+&nbsp;
 
 - loss function(손실함수)를 이용하여 error를 구한다.
 
@@ -136,6 +136,25 @@ Chain Rule의 이러한 특성을 이용하여 최종출력값에 각 노드들�
 
 > $$
 > error = (0.9 - 0.612248)^2\;=\;0.0828006
+> $$
+
+&nbsp;
+
+- Chain Rule을 이용하여 에러를 역전파 한다.
+  - $w_5$에 대한 역전파($w_5$가 오차에 얼마나 기여하였는지 계산)
+
+> $$
+> \frac{\partial Error}{\partial w_5}\;&=\;\frac{\partial Error}{\partial st3_{out}} \times \frac{\partial st3_{out}}{\partial st3_{in}} \times \frac{\partial st3_{in}}{\partial w_5}\\
+> $$
+
+> $$
+> \begin{align*}
+> \frac{\partial Error}{\partial st3_{out}}\;&=\;1\times \frac{1}{1}(y\;-\;\hat{y})^{2-1}\\
+> \;\\
+> &=\;0.9\;-\;0.612248\;=\;0.287752\\
+> \;\\
+> \frac{\partial st3_{out}}{\partial st3_{in}}\;&=\;
+> \end{align*}
 > $$
 
 
